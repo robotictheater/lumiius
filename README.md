@@ -20,7 +20,7 @@ You can choose to use the lumiius IDE at [https://lumiius.robotictheater.com/ide
 ## Getting Started
 
 
-#### 16x16 Grid Version
+#### 16x16 Grid
 
 1. Checkout the build process. I posted the how-to on the main maker sites. Choose your favorite:
    - Make:Projects
@@ -28,31 +28,14 @@ You can choose to use the lumiius IDE at [https://lumiius.robotictheater.com/ide
    - Hackaday
 
 2. After you have your Espruino connected to your 16x16 LED matrix, it's time to send it some code.  You can choose to do that either via the cloud or directly below.
-   - [Cloud version setup](#cloudversion)
-   - [Directly flashed version setup](#cloudversion)
+   - [Directly flashed version setup](#flashed-setup/README.md) - This is the most common way to get code running on you Espruino. Simply use the [Espruino IDE](https://www.espruino.com/ide/) to flash the app you want to run.  
+   - [Cloud version setup](cloud-setup/README.md) - The only downside to direclty flashing your apps is that it requires you to be directly connected to your Espruino Wifi via USB. That is to too convenient when your LED matrix is somewhere else besides your desk.  That is why I created a cloud IDE that allows you to push new code to your lumiius over the internet.
+   
 
 -------------------
 
-#### LED Strip Version
+#### LED Strip
 
 ~~ Currently working on some dispays for this. More information to come. ~~
 
 --------------------
-  
-## Directly Flashed Version
-The most common way to get code running on you Espruino is to use the [Espruino IDE](https://www.espruino.com/ide/). The only downside to this method is flashing new code requires you to be directly connected to your Espruino Wifi via USB.  That is why I also created a cloud version that allows you to push new code to your lumiius over the internet.
-
-
-### Setup
- - [flashed-setup/README.md](flashed-setup/README.md)
- 
- 
---------------------
-  
-## Cloud Version
-
-
-
-### Setup
- - [cloud-setup/README.md](cloud-setup/README.md)
-

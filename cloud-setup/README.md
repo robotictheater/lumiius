@@ -1,6 +1,6 @@
 ## Cloud Version
 
-###Setup
+### Setup
 
  1. The cloud version requires the Espruino to connect to your wifi network. Copy and paste the contents of **.boot0** into your Espruino IDE, update with your Wifi credentials and flash to the Espruino storage with the file name .boot0
 
