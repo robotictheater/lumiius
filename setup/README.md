@@ -1,6 +1,4 @@
-## Directly Flashed Version
-
-### Setup
+## One-time Setup
 
  1. Some apps require the Espruino to connect to the internet. Copy and paste the contents of [.boot0](./.boot0) into your Espruino IDE, update it with your Wifi credentials and flash to the Espruino storage with the file name ``.boot0``
 

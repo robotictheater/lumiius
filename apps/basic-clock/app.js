@@ -1,6 +1,9 @@
+const color="030",  // GRB value 030 is Red
+  minuteZoomColor="333", // GRB value 333 is white
+  TZ="America/New_York"; // Your current Timezone value
+
 let arr = null,
-    lastDraw="",
-    color="333";
+    lastDraw="";
 
 let digits={
   "0":[
@@ -587,9 +590,9 @@ function paintBackground(){
 function drawDigit(d, p, color){
   digits[d].forEach((row,y)=>{
     row.forEach((col,x)=>{
-      arr[xym(x+(4*p),y+4)]=(col==1) ? color[0] : 0;
-      arr[xym(x+(4*p),y+4)+1]=(col==1) ? color[1] : 0
-      arr[xym(x+(4*p),y+4)+2]=(col==1) ? color[2] : 0;
+      arr[pxy(x+(4*p),y+4)]=(col==1) ? color[0] : 0;
+      arr[pxy(x+(4*p),y+4)+1]=(col==1) ? color[1] : 0
+      arr[pxy(x+(4*p),y+4)+2]=(col==1) ? color[2] : 0;
     });
   });
 }
@@ -598,13 +601,13 @@ function drawDigit(d, p, color){
  * DRAW COLON FUNCTION
  * **************************************************/
 function drawColon(color){
-    arr[xym(6,6)]=color[0];
-    arr[xym(6,6)+1]=color[1];
-    arr[xym(6,6)+2]=color[2];
+    arr[pxy(6,6)]=color[0];
+    arr[pxy(6,6)+1]=color[1];
+    arr[pxy(6,6)+2]=color[2];
     
-    arr[xym(6,8)]=color[0];
-    arr[xym(6,8)+1]=color[1];
-    arr[xym(6,8)+2]=color[2];
+    arr[pxy(6,8)]=color[0];
+    arr[pxy(6,8)+1]=color[1];
+    arr[pxy(6,8)+2]=color[2];
 }
 
 /*****************************************************
@@ -619,7 +622,7 @@ function drawTime(){
   
   let dateString=h.toString()+m.toString();
   if(Date().getSeconds()===59){
-    zoom();
+    minuteZoom();
   }
   
   if(lastDraw!=dateString){
@@ -654,31 +657,28 @@ function drawTime(){
 }
 
 /*****************************************************
- * UNZOOM FUNCTION
+ * MINUTE ZOOM FUNCTION
  * **************************************************/
-let unZoom=()=>{
-  let zoomX=0;
-  let zI=setInterval(function(){
-    arr[xym(zoomX,15)]=0;
-    arr[xym(zoomX,15)+1]=0;
-    arr[xym(zoomX,15)+2]=0;
-    PIXEL.write(B15, arr);
-    zoomX++;
-    if(zoomX>15){
-      clearInterval(zI);      
-    }
-  },30);
-};
+let minuteZoom=()=>{
+  let unZoom=()=>{
+    let zoomX=0;
+    let zI=setInterval(function(){
+      arr[pxy(zoomX,15)]=0;
+      arr[pxy(zoomX,15)+1]=0;
+      arr[pxy(zoomX,15)+2]=0;
+      PIXEL.write(B15, arr);
+      zoomX++;
+      if(zoomX>15){
+        clearInterval(zI);      
+      }
+    },30);
+  };
 
-/*****************************************************
- * ZOOM FUNCTION
- * **************************************************/
-let zoom=()=>{
   let zoomX=0;
   let zI=setInterval(function(){
-    arr[xym(zoomX,15)]=3;
-    arr[xym(zoomX,15)+1]=3;
-    arr[xym(zoomX,15)+2]=3;
+    arr[pxy(zoomX,15)]=minuteZoomColor[0];
+    arr[pxy(zoomX,15)+1]=minuteZoomColor[1];
+    arr[pxy(zoomX,15)+2]=minuteZoomColor[2];
     PIXEL.write(B15, arr);
     zoomX++;
     if(zoomX>15){
@@ -699,7 +699,7 @@ let clock=null;
 function STARTAPP(cb){
     arr=new Uint8ClampedArray(256*3);
     BUZZER.vol=0.1;
-    require("http").get(`https://api.lumiius.com/service/unixtime/${encodeURIComponent("America/New_York")}`, function(res) {
+    require("http").get(`https://lumiius-api.robotictheater.com/service/unixtime/${encodeURIComponent(TZ)}`, function(res) {
         let body="";
         res.on('data', function(data) {  body+=data;  });
             
@@ -721,11 +721,6 @@ function STARTAPP(cb){
 }
 
 
-/*****************************************************
- * STOP APP FUNCTION
- * **************************************************/
-function STOPAPP(cb){
-    clearInterval(clock);
-    arr=null;
-    cb();
-}
+connectToWifi(function(){
+  STARTAPP();
+});
