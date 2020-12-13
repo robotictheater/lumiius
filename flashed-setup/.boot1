@@ -1,0 +1,27 @@
+const PIXEL=require("neopixel"),
+      WIFI = require("Wifi"),
+      BUZZER=require('https://raw.githubusercontent.com/lumiius/device/master/libs/buzzer.js');
+      BUZZER.port=A0;
+
+function pxy(x,y){ return (((x%2===0) ? (16*(x))+(y) : (16*(x+1))-(y+1)))*3; }
+
+/*******************************************
+  * CONNECT TO WIFI NETWORK
+*******************************************/
+function connectToWifi(cb){
+  WIFI.connect(SSID, { password : WPWD }, function(err) {
+    if (err) {
+      console.log("WIFI ERR",err);        
+    }else{
+      console.log("Connected to wifi", process.memory().free);        
+      if(typeof cb==="function"){ cb(); }
+    }
+  });
+}
+    
+WIFI.on('disconnected', function(details) {
+  setTimeout( ()=>{ 
+    console.log("Reconnecting to wifi");
+    connectToWifi();
+  },5000 );
+});

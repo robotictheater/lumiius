@@ -37,17 +37,22 @@ You can choose to use the lumiius IDE at [https://lumiius.robotictheater.com/ide
 
 ~~ Currently working on some dispays for this. More information to come. ~~
 
--------------------
-
-## Cloud Version Setup
- 1. The cloud version requires the Espruino to access your wifi network. Copy and paste the contents of /cloud-setup/.boot0 into your Espruino IDE and update with your Wifi credentials.
- 2. Now you need to flash the main lumiius code onto your Espruino. This will handle connecting to your wifi as well as the lumiius websocket server.  Copy and paste the contents of /cloud-setup/.bootcde into your Espruino IDE and flash it to your device.
- 3. Login to the lumiius IDE and register your devices serial number [https://lumiius.robotictheater.com/ide](https://lumiius.robotictheater.com/ide)
- 4. Now your Espruino should be connected to your wifi with the lumiius code running. You should also see your device listed with a solid pink indicator by it. 
-
- Checkout the ide-readme.md file for information on how to use the lumiius IDE.
-
-
 --------------------
   
-## Directly Flashed Version Setup  
+## Directly Flashed Version
+The most common way to get code running on you Espruino is to use the [Espruino IDE](https://www.espruino.com/ide/). The only downside to this method is flashing new code requires you to be directly connected to your Espruino Wifi via USB.  That is why I also created a cloud version that allows you to push new code to your lumiius over the internet.
+
+
+### Setup
+ - [flashed-setup/README.md](flashed-setup/README.md)
+ 
+ 
+--------------------
+  
+## Cloud Version
+
+
+
+### Setup
+ - [cloud-setup/README.md](cloud-setup/README.md)
+
