@@ -1,5 +1,7 @@
 # Fireplace
 
+![](fireplace.gif)
+
 -------------------------
 
 ## Overview
