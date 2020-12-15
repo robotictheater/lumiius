@@ -1,6 +1,6 @@
 # Santa
 
-![](santa.jpg)
+![](./images/santa.jpg)
 
 ## Image Tilemap
 [
