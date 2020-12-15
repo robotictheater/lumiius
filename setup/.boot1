@@ -3,6 +3,9 @@ const PIXEL=require("neopixel"),
       BUZZER=require('https://raw.githubusercontent.com/lumiius/device/master/libs/buzzer.js');
       BUZZER.port=A0;
 
+/*******************************************
+  * PXY - Pixel X/Y - Maps a x,y values to an LEDs address in the zig-zag matrix.
+*******************************************/
 function pxy(x,y){ return (((x%2===0) ? (16*(x))+(y) : (16*(x+1))-(y+1)))*3; }
 
 /*******************************************
