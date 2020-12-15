@@ -5,7 +5,7 @@
 -------------------------
 
 ## Overview
-A warm and cozy crackling LED fireplace
+An LED fireplace
 
 -------------------------
 

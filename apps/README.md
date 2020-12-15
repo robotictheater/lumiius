@@ -1,5 +1,5 @@
 # lumiius apps
-Currently I only have a small number of apps based on what my kids ask for.  If you would like to share an app you create, please send me an PR. 
+Currently I only have a small number of apps based on what my kids ask for.  If you would like to share an app you create, please send me a PR. 
 
  - [Basic Digital Clock](./basic-clock)
  - [Fireplace](./fireplace)

@@ -1,8 +1,6 @@
 # Basic Clock
 
-![](clock-face-1.jpg)
-
-![](clock-face-2.jpg)
+![](clock-face-1.jpg)  ![](clock-face-2.jpg)
 
 -------------------------
 

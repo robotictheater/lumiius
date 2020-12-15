@@ -6,14 +6,13 @@
 -------------------
 
 ## Overview
-lumiius is an [Espruino](http://espruino.com) powered RGB LED project that I built for my kids. 
+lumiius is an [Espruino](http://espruino.com) powered RGB LED frame. 
 
-It's easy to build and requires no special tools or wood working. 
+It's easy to build and requires no special tools or wood working to assemble
 
 -------------------
 
 ## Getting Started
-
 
 #### 16x16 Grid
 
