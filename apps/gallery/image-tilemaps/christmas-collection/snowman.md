@@ -1,6 +1,6 @@
 # Snowman
 
-![](snowman.jpg)
+![](./images/snowman.jpg)
 
 ## Image Tilemap
 

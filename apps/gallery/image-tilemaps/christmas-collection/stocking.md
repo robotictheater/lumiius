@@ -1,6 +1,6 @@
 # Stocking
 
-![](stocking.jpg)
+![](./images/stocking.jpg)
 
 ## Image Tilemap
 
