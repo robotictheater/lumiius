@@ -1,6 +1,6 @@
 # Gallery
 
-![](tree.jpg)
+![](./image-tilemaps/christmas-collection/images/tree.jpg)
 
 -------------------------
 

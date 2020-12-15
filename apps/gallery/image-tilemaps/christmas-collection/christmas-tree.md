@@ -1,6 +1,6 @@
 # Christmas Tree
 
-![](../../tree.jpg)
+![](./images/tree.jpg)
 
 ## Image Tilemap
 
